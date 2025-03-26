@@ -24,7 +24,14 @@
     </nav>
 
     <div class="search-bar">
-        <input placeholder="Search or type a website...">
+        <input placeholder="Search or enter a website...">
+        <a href="s" aria-label="Next" style="text-decoration: none;">
+            <i class="fas fa-arrow-right" aria-hidden="true" 
+               style="background-color: #1A1A1A; border-radius: 50%; width: 40px; height: 40px; 
+                      display: flex; align-items: center; justify-content: center; color: white; 
+                      font-size: 1.4em; transition: background-color 0.3s, transform 0.2s ease-in-out;">
+            </i>
+        </a>
     </div>
 
     <script>
@@ -35,11 +42,9 @@
         }
         requestAnimationFrame(updateTime);
     </script>
-
     <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
-  <script src="/assets/register-sw.js"></script>
-  <script src="/script.js" defer></script>
-    
+    <script src="/uv/uv.config.js"></script>
+    <script src="/assets/register-sw.js"></script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
