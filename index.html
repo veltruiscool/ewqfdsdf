@@ -1,86 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Electric Network - Games</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
     
-    <body>
-        <nav class="nav-bar">
-            <div class="nav-left">
-                <a href="#home" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i></a>
-                <a href="#games" aria-label="Games"><i class="fas fa-gamepad" aria-hidden="true"></i></a>
-                <a href="#proxy" aria-label="Proxy"><i class="fas fa-globe" aria-hidden="true"></i></a>
-                <a href="#settings" aria-label="Settings"><i class="fas fa-cog" aria-hidden="true"></i></a>
-                <a href="#apps" aria-label="Apps"><i class="fas fa-grip-horizontal" aria-hidden="true"></i></a>
-            </div>
-            <div class="nav-right">
-                <span id="current-time" aria-live="polite"></span>
-            </div>
-        </nav>
-
-        <div id="home" class="welcome">
-            <h1>Welcome to..</h1>
-            <h4>Electric Network</h4>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <a href="games.html" aria-label="Games"><i class="fas fa-gamepad" aria-hidden="true"></i></a>
+            <a href="#proxy" aria-label="Proxy"><i class="fas fa-globe" aria-hidden="true"></i></a>
+            <a href="#settings" aria-label="Settings"><i class="fas fa-cog" aria-hidden="true"></i></a>
+            <a href="#apps" aria-label="Apps"><i class="fas fa-grip-horizontal" aria-hidden="true"></i></a>
+            <a href="https://discord.gg/UJ8rbexNZw" aria-label="Apps"><i class="fab fa-discord" aria-hidden="true"></i></a>
         </div>
+        <div class="nav-right">
+            <span id="current-time" aria-live="polite"></span>
+        </div>
+    </nav>
 
-        <section id="games" class="games-page" style="display: none;">
-            <div class="games-grid">
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 1</h3>
-                    <p>A thrilling adventure awaits!</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 2</h3>
-                    <p>Test your puzzle-solving skills</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 3</h3>
-                    <p>Race against time</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 4</h3>
-                    <p>Explore new worlds</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 5</h3>
-                    <p>Strategy at its finest</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 6</h3>
-                    <p>Multiplayer madness</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 7</h3>
-                    <p>Classic arcade action</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 8</h3>
-                    <p>Mind-bending challenges</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 9</h3>
-                    <p>Epic battles ahead</p>
-                </div>
-                <div class="game-container">
-                    <div class="game-preview">Image Preview</div>
-                    <h3>Game 10</h3>
-                    <p>Relax and unwind</p>
-                </div>
-            </div>
-        </section>
-    </body>
+    <div class="search-bar">
+        <input placeholder="Search or type a website...">
+    </div>
+
+    <script>
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById('current-time').textContent = currentTime;
+            requestAnimationFrame(updateTime);
+        }
+        requestAnimationFrame(updateTime);
+    </script>
+</body>
 </html>
