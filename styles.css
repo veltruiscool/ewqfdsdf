@@ -5,13 +5,13 @@ body {
 
 .nav-bar {
     background-color: #535353;
+    top: 25px;
     width: 85%;
     position: fixed;
-    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 30px;
-    padding: 15px;
+    padding: 15px 30px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
@@ -22,6 +22,7 @@ body {
 .nav-left {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .nav-left a {
@@ -30,31 +31,65 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    margin: 0 20px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 12px;
     transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
 }
 
 .nav-left a i {
-    margin-right: 10px;
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .nav-left a:hover {
     background-color: #ffffff;
     color: #535353;
-    transform: scale(1.1);
-}
-
-.nav-left a:hover i {
-    color: #535353;
+    transform: scale(1.05);
 }
 
 .nav-right {
     color: white;
-    font-size: 1.6em;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bolder;
     text-align: right;
     letter-spacing: 1px;
+}
+
+.welcome {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcome h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.welcome h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        width: 95%;
+        padding: 10px 20px;
+    }
+
+    .nav-left {
+        gap: 8px;
+    }
+
+    .nav-left a {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    .nav-right {
+        font-size: 1.2em;
+    }
 }
