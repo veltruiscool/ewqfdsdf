@@ -1,50 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-    
-<body>
-    <nav class="nav-bar">
-        <div class="nav-left">
-            <a href="games.html" aria-label="Games"><i class="fas fa-gamepad" aria-hidden="true"></i></a>
-            <a href="#proxy" aria-label="Proxy"><i class="fas fa-globe" aria-hidden="true"></i></a>
-            <a href="#settings" aria-label="Settings"><i class="fas fa-cog" aria-hidden="true"></i></a>
-            <a href="#apps" aria-label="Apps"><i class="fas fa-grip-horizontal" aria-hidden="true"></i></a>
-            <a href="https://discord.gg/UJ8rbexNZw" aria-label="Apps"><i class="fab fa-discord" aria-hidden="true"></i></a>
-        </div>
-        <div class="nav-right">
-            <span id="current-time" aria-live="polite"></span>
-        </div>
-    </nav>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>LupineVault - Free Web Browser - School Safe & 100% Teacher Approved!</title>
+      <!--<link rel="stylesheet" href="../../assets/styles/css/global.min.css">-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="icon" type="image/x-icon" href="logo.png">
+      
+      <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
+      
+      <link rel="stylesheet" href="../assets/font-awesome/css/all.css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      
+      
+      <canvas id="canvas"></canvas>
+      <div id="header">
+         <img src="Title.png" alt="Logo" id="bigTitle">
+      </div>
+      <div id="content">
+         
+         <p>An upkept version of <a href="https://github.com/TheTIW/UV-Static">TIW's UV-Static</a></p>
 
-    <div class="search-bar">
-        <input placeholder="Search or enter a website...">
-        <a href="s" aria-label="Next" style="text-decoration: none;">
-            <i class="fas fa-arrow-right" aria-hidden="true" 
-               style="background-color: #1A1A1A; border-radius: 50%; width: 40px; height: 40px; 
-                      display: flex; align-items: center; justify-content: center; color: white; 
-                      font-size: 1.4em; transition: background-color 0.3s, transform 0.2s ease-in-out;">
-            </i>
-        </a>
-    </div>
-
-    <script>
-        function updateTime() {
-            const currentTime = new Date().toLocaleTimeString();
-            document.getElementById('current-time').textContent = currentTime;
-            requestAnimationFrame(updateTime);
-        }
-        requestAnimationFrame(updateTime);
-    </script>
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
-    <script src="/assets/register-sw.js"></script>
-    <script src="/script.js" defer></script>
-</body>
+         <form id="uv-form">
+            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+          </form>
+           <div id="popularSites">
+                <img src="https://img.icons8.com/?size=100&id=T2CwYFr5ouk6&format=png&color=000000" alt="Xbox" onclick="autofill('http://xbox.com/play')">
+                <img src="https://img.icons8.com/?size=100&id=48137&format=png&color=000000" alt="Now.gg" onclick="autofill('https://now.gg/')">
+                <img src="https://img.icons8.com/?size=100&id=48166&format=png&color=000000" alt="Google" onclick="autofill('https://google.com')">
+                <img src="https://img.icons8.com/?size=100&id=92582&format=png&color=000000" alt="GeForce NOW" onclick="autofill('https://play.geforcenow.com/')">
+                <img src="https://img.icons8.com/?size=100&id=KeTtCQ_b-ZiV&format=png&color=000000" alt="TikTok" onclick="autofill('https://tiktok.com')">
+                <img src="https://img.icons8.com/?size=100&id=52539&format=png&color=000000" alt="GitHub" onclick="autofill('https://github.com')">
+                <img src="https://img.icons8.com/?size=100&id=53013&format=png&color=000000" alt="Twitch" onclick="autofill('https://twitch.tv')">
+               <img src="https://img.icons8.com/?size=100&id=kTuxVYRKeKEY&format=png&color=000000" alt="ChatGPT" onclick="autofill('https://chatgpt.com')">
+            </div>
+            <a href="https://discord.gg/Dybpe2uWfZ" target="_blank" class="fa-brands fa-discord"></a>
+            <a href="https://github.com/tf7software/UV-Static" target="_blank"class="fa-brands fa-github"></a>
+            <a href="https://lupinevault.com/TIW/" target="_blank"class="fa-solid fa-cloud"></a>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+        
+      </div>
+      <script src="stars.js"></script>
+      
+      <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
+      <script src="uv/uv.config.js" charset="UTF-8" defer></script>
+      <script src="register-sw.js" charset="UTF-8" defer></script>
+      <script src="search.js" charset="UTF-8" defer></script>
+      <script src="index.js" charset="UTF-8" defer></script>
+      <div id="footer">
+         <footer>© tf7software, <a href="https://rhw.one/">rhw.one</a> - <a href="https://lupinevault.com/privacy-policy.html">Privacy Policy</a> - By Using LV/UV Static Proxy You Agree To Our <a href="https://lupinevault.com/tos.html">Terms of Service</a></footer>
+      </div>
+   </body>
 </html>
